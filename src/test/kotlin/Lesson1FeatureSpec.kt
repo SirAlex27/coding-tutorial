@@ -94,10 +94,23 @@ fun sum1(a: Int, b: Int): Int {
 fun sum2(a: Int, b: Int) = a + b
 
 fun maxOf(a: Int, b: Int) = if (a > b) a else b
-fun minOf(a: Int,b: Int,c: Int) =
-    if (c < b && c < a) c else
-    if (b < c && b < a) b else
-    if (a < c && a < b) a else println("Error")
+fun minOf(a: Int,b: Int,c: Int) {
+
+}
+
+fun minOf(list: List<Int> ) : Int{
+
+    var min: Int = list[0]
+
+    for (i in list){
+
+        if (i<min) min=i
+
+    }
+
+    return min
+
+}
 
 fun minOf(a: Double, b: Double): Any {
     if (a < b) return a
@@ -119,4 +132,18 @@ fun count(list: ArrayList<String>): Int {
         counter += 1
     }
     return counter
+}
+fun  main(args: Array<String>) {
+
+    var fruits = listOf("Apple", "Orange", "Grapes", "kiwi")
+    for (n in fruits) {
+        print(n)
+        var fruits: Map<String, Int> = mapOf("Apple" to 57, "Orange" to 27, "Grapes" to 32, "kiwi" to 20)
+
+        println(fruits["Apple"])   // 57
+        for (fruit in fruits) println("${fruit.key} - ${fruit.value}")
+    }
+
+    println(fruits)
+}
 }
