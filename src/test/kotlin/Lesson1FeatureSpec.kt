@@ -133,17 +133,18 @@ fun count(list: ArrayList<String>): Int {
     }
     return counter
 }
-fun  main(args: Array<String>) {
 
-    var fruits = listOf("Apple", "Orange", "Grapes", "kiwi")
-    for (n in fruits) {
-        print(n)
-        var fruits: Map<String, Int> = mapOf("Apple" to 57, "Orange" to 27, "Grapes" to 32, "kiwi" to 20)
-
-        println(fruits["Apple"])   // 57
-        for (fruit in fruits) println("${fruit.key} - ${fruit.value}")
+fun count(args : Array<String>): MutableMap<String, Int> {
+    val map = mutableMapOf<String, Int>()
+    for (item in args){
+        if(map.contains(item)){
+            map[item] = map.getValue(item) + 1
+        }else{
+            map[item] = 1
+        }
     }
-
-    println(fruits)
+    return map
 }
+fun main(args : Array<String>) {
+    println( count(arrayOf("apple", "orange", "banana", "kiwi", "orange", "banana", "banana", "kiwi", "apple", "orange")))
 }
